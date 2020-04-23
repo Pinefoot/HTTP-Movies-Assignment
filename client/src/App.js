@@ -21,9 +21,7 @@ const App = () => {
     setSavedList([...savedList, movie]);
   };
 
-  const editSavedList = movie => {
-    
-  }
+  
 
   useEffect(() => {
     getMovieList();
@@ -36,15 +34,16 @@ const App = () => {
       <Route exact path="/">
         <MovieList movies={movieList} />
       </Route>
-
+      <Route path = '/update-movie/:id' render={(props)=>{
+        return <UpdateMovieForm {...props} UpdateMovieForm={UpdateMovieForm}/>}}>
+       
+      </Route>
       <Route path="/movies/:id">
         <Movie addToSavedList={addToSavedList} />
       </Route>
-      {/* editSavedList={editSavedList}  */}
+      
 
-      <Route path = '/update-movie/:id'>
-        <UpdateMovieForm />
-      </Route>
+      
     </>
   );
 };
