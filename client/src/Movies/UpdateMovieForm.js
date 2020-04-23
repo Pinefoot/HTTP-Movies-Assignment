@@ -51,7 +51,7 @@ const UpdateMovieForm = props =>{
 
     const addStar = e => {
         e.preventDefault();
-        setMovie({...movie,stars: [movie.stars, '']})
+        setMovie({...movie, stars: [movie.stars, '']})
     }
 
 
